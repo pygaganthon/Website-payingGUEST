@@ -1,0 +1,126 @@
+.container{
+    padding-bottom:60px;
+}
+
+body{
+    background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-family: Lato;
+}
+
+.thumbnail img{
+    width:100%;
+}
+
+.thumbnail{
+    padding: 0px;
+}
+
+/*.jumbotron {*/
+/*  color:grey;*/
+/*  height:300px;*/
+  /*text-shadow: #444 0 1px 1px;*/
+/*     background: url("https://previews.dropbox.com/p/thumb/AAWGPT6ZMk0ZRt-hwo-Kpg-i7OXrtEjAgg-93BXQtbuqxY9JPlsfvk6YMmg1yoAG7fhohTGwCDY5OfI5KkHJdY6-gZ-sg1NARjKdtqIinOERJyToOrhnA4WwXP2xlPK2KDmbkYgcQeYUOKU7bxU3n-QMbG-NiEPbDVZkt4jpBwu3l7Laa5i5zcz1vGcssRi9nJgQO_nNslkjQD0T1T1r8xu56vMXIgfWCoXaGuO4S9f8426FvYFALhRMSjfoeKJeTTY/p.jpeg?size=1280x960&size_mode=3") no-repeat ; */
+/*    -webkit-background-size: 100% 100%;*/
+/*    -moz-background-size: 100% 100%;*/
+/*    -o-background-size: 100% 100%;*/
+    /*background-size: 100% 100%;*/
+/*    background-position:100% 70%;*/
+/*    background-size:100%;*/
+/*}*/
+
+
+.jumbotron{
+    /*color:grey;*/
+  position: relative;
+    overflow: hidden;
+    height: 300px;
+    text-shadow: 1px 1px 0 rgba(220,220,220,0.2);
+  /* Tried setting the height. Didnt work either */
+  /* height: 200px; */
+}
+
+#signup{
+     color: #707070;
+}
+
+#signin{
+     color: #707070;
+}
+
+#onehome{
+color:#202020;
+text-shadow: 1px 1px 0 rgba(220,220,220,0.2);
+}
+#video-background{ 
+  position: absolute;
+  height: auto;
+  width: auto;
+  min-height: 100%;
+  min-width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+
+#jumbo{
+  position: relative;
+  color: #f8f8f8;
+  z-index: 2;
+  text-shadow: 1px 1px 0 rgba(220,220,220,0.2);
+}
+#add{
+  position: relative;
+  color: #ffffff;
+  z-index: 2;
+}
+
+
+.btn{
+     background-color:rgba(220,220,220,0.7);
+     border-color:rgba(192,192,192,0.7);
+     box-shadow:0 2px 4px rgba(0,0,0,0.3);
+}
+
+.thumbnail:hover{
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgba(192,192,192,0.5)),
+        color-stop(1, rgba(192,192,192,0.5))
+    );
+    box-shadow:0 2px 4px rgba(0,0,0,0.3);
+}
+
+.thumbnail{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:hover {
+    
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgba(192,192,192,0.5)),
+        color-stop(1, rgba(192,192,192,0.5))
+    );
+    box-shadow:0 2px 4px rgba(0,0,0,0.3);
+}
+
+header{
+    color:brown;
+}
+
+/*.jumbotron{*/
+/*    background-attachment: fixed;*/
+/*    background:url("https://i.ibb.co/G7wQjc3/gades-photography-761358-unsplash.jpg");*/
+    /*background-position:;*/
+/*    height: 400px;*/
+    /*margin-top:0px;*/
+    /*margin-bottom: 8px;*/
+/*}*/

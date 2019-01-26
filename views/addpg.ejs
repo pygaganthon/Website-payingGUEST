@@ -1,0 +1,54 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="row">   
+        <h1 style="text-align:center;">Add your GuestHome!</h1>
+        <div style="width: 30%; margin:20px auto;">
+            <form action="/payingguests" method="POST" id="add">
+                        <div class="form-group">
+                            <input  class = "form-control" type="text" name="homename" placeholder="Name of guesthome">    
+                        </div>
+                
+                        <div class="form-group">
+                        <input class = "form-control" type="text" name="homeimage" placeholder="Image of guesthome">
+                        </div>
+                        
+                        <div class="form-group">
+                        <input class = "form-control" type="text" name="descriptionform" placeholder="Enter the description of guesthome">
+                        </div>
+                        
+                      <!--   <div class="form-group">-->
+                      <!--  <label for="exampleInputFile">File input</label>-->
+                      <!--  <input type="file" name="homeimage" id="exampleInputFile">-->
+                      <!--  <p class="help-block">Upload your home picture</p>-->
+                      <!--</div>-->
+                      
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox">I accept the terms & conditions.
+                        </label>
+                      </div>
+                      
+                        
+                <div class="form-group">
+                    <button class="btn btn-lg btn-default btn-block">Submit!</button>   
+                </div>
+            </form> 
+            
+            <a  href="/payingguests">Go Back</a>
+        </div>
+        
+        <!--<div style:"width:30%; margin:0 auto; ">-->
+        <!--    <a  href="/payingguests">Go Back</a>     -->
+        <!--</div>-->
+        
+    </div>
+    
+</div>
+
+
+   
+
+
+<% include partials/footer.ejs %>
+

@@ -1,0 +1,46 @@
+<% include partials/headersignin.ejs %>
+
+<div class="container" id="signin">
+    <div class="row">   
+        <h1 style="text-align:center;">LogIn!</h1>
+        <div style="width: 30%; margin:20px auto;">
+            <form action="/signin" method="POST">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input  class = "form-control" type="text" name="username" placeholder="Username">    
+                        </div>
+                
+                        <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        
+                        <div class="checkbox">
+                        <label>
+                          <input type="checkbox">Remember me.
+                        </label>
+                        </div>
+                      
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-default btn-block">Submit!</button>   
+                        </div>
+            </form> 
+            
+            <!--<a  href="/payingguests">Go Back</a>-->
+            <p>Not SignedUp yet! <a  href="/signup">SignUp</a></p>
+        </div>
+        
+        <!--<div style:"width:30%; margin:0 auto; ">-->
+        <!--    <a  href="/payingguests">Go Back</a>     -->
+        <!--</div>-->
+        
+    </div>
+    
+</div>
+
+
+   
+
+
+<% include partials/footer.ejs %>
+

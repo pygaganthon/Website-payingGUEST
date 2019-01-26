@@ -1,0 +1,70 @@
+<% include partials/headersignup.ejs %>
+
+<div class="container" id="signup">
+    <div class="row">   
+        <h1 style="text-align:center;">SignUp!</h1>
+        <div style="width: 30%; margin:20px auto;">
+            <form action="/signup" method="POST">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input  class = "form-control" type="text" name="firstname" placeholder="firstname">    
+                        </div>
+                
+                        <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control"  placeholder="lastname">
+                        </div>
+                       
+                        <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input  class = "form-control" type="text" name="username" placeholder="Username">    
+                        </div>
+                
+                        <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        
+                        
+                        <!--<div class="form-group">-->
+                        <!--      <div class="checkbox">-->
+                        <!--        <label>-->
+                        <!--          <input type="checkbox"> Remember me-->
+                        <!--        </label>-->
+                        <!--      </div>-->
+                        <!--  </div>-->
+                          
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-default btn-block">Sign up</button>   
+                        </div>
+            </form> 
+            
+            <!--<a  href="/payingguests">Go Back</a>-->
+            <p>Already Signedin <a  href="/signin">Log In</a></p>
+        </div>
+        
+        <!--<div style:"width:30%; margin:0 auto; ">-->
+        <!--    <a  href="/payingguests">Go Back</a>     -->
+        <!--</div>-->
+        
+    </div>
+    
+</div>
+
+
+   
+
+
+<% include partials/footer.ejs %>
+
+ 
+                        <!--<div class="form-group">-->
+                        <!--      <label>BirthDate</label>-->
+                        <!--        <input class="form-control" type="date" name:"bdate">-->
+                        <!--</div>-->
+                

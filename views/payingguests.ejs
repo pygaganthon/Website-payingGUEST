@@ -1,0 +1,50 @@
+<% include partials/header.ejs %>
+    <div class="container"> 
+        <header class="jumbotron">
+            
+            <!--<video id="video-background" preload muted autoplay loop autobuffer>-->
+            <!--        <source src="/stylesheets/test3.mov" type="video/mov">-->
+                    <!--<source src="https://www.videvo.net/videvo_files/converted/2014_09/preview/Low_Flight_over_the_Houses.mp438838.webm" type="video/webm">-->
+                    
+                    <!--<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">-->
+            <!--</video> -->
+               <div class="container" id="jumbo">
+                
+                <h1>payingGUEST</h1>
+                <p>finding a home is so easy!</p>
+                <p><a href="/payingguests/addpg" class="btn btn-default btn-lg" type="button">Add your Guest Home</a></p>
+                </div>
+            
+                <video  id="video-background" preload muted autoplay loop autobuffer class="embed-responsive-item">
+                    <source src=/stylesheets/test.mp4 type=video/mp4>
+                </video>
+            
+            
+        </header>
+       
+        
+        <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+            <% pginfo.forEach(function(item){ %>
+                <div class="col-md-3 col-sm-6">
+                    
+                        
+                    <div class="thumbnail">
+                        <!--style="padding:0;"-->
+                        <a href="/payingguests/<%= item._id %>">
+                            <img src="<%= item.image %>">
+                        </a>   
+                            <div class="caption">
+                                   <h4> <%= item.name  %> </h4>
+                            </div>
+                            
+                    </div>
+                    
+                    
+                </div>
+            <% }); %>
+        </div>
+        
+    </div>
+
+
+<% include partials/footer.ejs %>
