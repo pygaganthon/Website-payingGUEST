@@ -16,8 +16,9 @@ var pguestsroutes = require("./routes/pguests");
 
 // removes all homes and comments and add new homes & comments (with new id)
 // seedDB();
-mongoose.connect("mongodb://gagancrocks:FARZi6!1@ds161104.mlab.com:61104/payingguest");
-//mongoose.connect("mongodb://localhost:27017/homes",{useNewUrlParser:true}); // create homes database 
+// mongoose.connect("mongodb://gagancrocks:FARZi6!1@ds161104.mlab.com:61104/payingguest");
+mongoose.connect(process.env.DATABASEURL); // create homes database 
+
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(bodyParser.urlencoded({extended:true}));
