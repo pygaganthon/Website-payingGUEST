@@ -23,15 +23,18 @@
             <div class="well">
               <div>
                 
-                <form action="/payingguests/<%=homeinfo._id%>/comment" method="POST" class="form-inline">       
-                <div class="form-group">
-                    <textarea style="margin-right:28px;" class="form-control" rows="2" cols="90" type="text" name="text" placeholder="Write a review"></textarea>
-                    <!--<input class = "form-control" type="text" name="comment[text]" placeholder="Write a review">-->
-                </div>
-                <!--<div class="form-group">-->
-                <!--    <input class = "form-control" style="margin:auto 25px;" type="text" name="comment[author]" placeholder="Write your name">-->
-                <!--</div>-->
-                <button class="btn btn-default btn-mg" type="submit">Add review!</button>   
+                <form action="/payingguests/<%=homeinfo._id%>/comment" method="POST" class="form-inline">
+                       
+                <% if(JSON.stringify(homeinfo.owner.id) !== JSON.stringify(curruser._id)){ %>
+                
+                    <div class="form-group">
+                        <textarea style="margin-right:28px;" class="form-control" rows="2" cols="90" type="text" name="text" placeholder="Write a review"></textarea>
+                        <!--<input class = "form-control" type="text" name="comment[text]" placeholder="Write a review">-->
+                    </div>
+                    <button class="btn btn-default btn-mg" type="submit">Add review!</button>  
+                    
+                 <% } %>   
+                 
                 </form>
             </div>
             <hr>
