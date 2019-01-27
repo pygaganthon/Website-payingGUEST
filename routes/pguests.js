@@ -70,6 +70,41 @@ router.get("/payingguests/:id",isLoggedIn,function(req,res){
     });
 });
 
+// edit the home post  // ??? WHY NOT isLoggedIn here?
+router.get("/payingguests/:id/edit",isLoggedIn,function(req,res){
+    Homes.findById(req.params.id,function(err,foundhome){
+        if(err){
+            console.log(err);
+        }
+        else{
+           res.render("edit",{homeinfo:foundhome}); 
+        }
+    });
+    
+});
+
+router.put("/payingguests/:id",isLoggedIn,function(req,res){
+    // find and update the home
+    // console.log(curruser._id);
+    var data = {
+        name:req.body.homename,
+        image:req.body.homeimage,
+        description:req.body.descriptionform
+    }
+    // Homes.findByIdAndUpdate(req.params.id,data,function(err,updated)
+    Homes.findOneAndUpdate({_id:req.params.id},data,function(err,updated)
+    {
+     if(err){
+            res.redirect("/payingguests");
+        }
+        else{
+           res.redirect("/payingguests/"+req.params.id);
+        }    
+    });
+    // redirect found values to page
+   
+});
+
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();

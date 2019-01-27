@@ -4,14 +4,20 @@
     <div class="row">
         <div class="col-md-9">
                  <!--style="padding:0;"-->
-            <div class="thumbnail">
+            <div class="thumbnail" >
                  <!--style="width:100%"-->
                 <img class="img-responsive" src="<%= homeinfo.image %>">
-                <div class="caption-full" style="padding:9px">
+                <div class="caption-full" style="padding:19px">
                     <h4 class="pull-right">$16/night</h4>
                     
                     <h4><%= homeinfo.name %> by <a href="">@<%= homeinfo.owner.firstname %></a></h4>
                     <p><%= homeinfo.description %> </p>
+                    <!--<span >-->
+                    
+                    <% if(JSON.stringify(homeinfo.owner.id) === JSON.stringify(curruser._id)){ %>
+                    <a style="margin-left:94%" href="/payingguests/<%=homeinfo._id%>/edit" class="btn btn-default btn-sm">Edit</a>
+                    <% } %>
+                    <!--</span>-->
                 </div>
             </div>
             <div class="well">
@@ -19,13 +25,13 @@
                 
                 <form action="/payingguests/<%=homeinfo._id%>/comment" method="POST" class="form-inline">       
                 <div class="form-group">
-                    <textarea style="margin-right:29px;" class="form-control" rows="2" cols="92" type="text" name="text" placeholder="Write a review"></textarea>
+                    <textarea style="margin-right:28px;" class="form-control" rows="2" cols="90" type="text" name="text" placeholder="Write a review"></textarea>
                     <!--<input class = "form-control" type="text" name="comment[text]" placeholder="Write a review">-->
                 </div>
                 <!--<div class="form-group">-->
                 <!--    <input class = "form-control" style="margin:auto 25px;" type="text" name="comment[author]" placeholder="Write your name">-->
                 <!--</div>-->
-                <button class="btn btn-default btn-sm" type="submit">Add review!</button>   
+                <button class="btn btn-default btn-mg" type="submit">Add review!</button>   
                 </form>
             </div>
             <hr>
@@ -33,7 +39,7 @@
             <div class="row">
                 <div class="col-md-12">
                      <strong><%= comment.author.firstname %></strong>
-                     <span class="pull-right">23 days ago</span>
+                     <span class="pull-right">3 days ago</span>
                      <p>
                         <%= comment.text %>    
                      </p>

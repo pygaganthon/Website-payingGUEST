@@ -8,7 +8,8 @@ var express     = require("express"),
     users  = require("./models/users"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
-    passportLocalMongoose = require("passport-local-mongoose");
+    passportLocalMongoose = require("passport-local-mongoose"),
+    methodOverride = require("method-override");
     
 var authroutes = require("./routes/auth");    
 var commentroutes = require("./routes/comment");    
@@ -16,21 +17,26 @@ var pguestsroutes = require("./routes/pguests");
 
 // removes all homes and comments and add new homes & comments (with new id)
 // seedDB();
-// mongoose.connect("mongodb://gagancrocks:FARZi6!1@ds161104.mlab.com:61104/payingguest");
-mongoose.connect(process.env.DATABASEURL); // create homes database 
+
+// if for some reason my environment variable screwed up
+// env variable is used for storing secret info 
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/homes"
+mongoose.connect(url); // create homes database 
+
+
+
 
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(bodyParser.urlencoded({extended:true}));
-
 app.use(require("express-session")({
     secret:"Gagan is a thief.",
     resave:false,
     saveUninitialized:false
     }));
-    
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride("_method"));
 
 passport.use(new LocalStrategy(users.authenticate())); 
 passport.serializeUser(users.serializeUser());  
