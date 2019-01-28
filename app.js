@@ -10,7 +10,6 @@ var express     = require("express"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
     methodOverride = require("method-override");
-    
 var authroutes = require("./routes/auth");    
 var commentroutes = require("./routes/comment");    
 var pguestsroutes = require("./routes/pguests");    

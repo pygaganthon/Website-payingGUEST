@@ -7,6 +7,10 @@ body{
 background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 font-family: Lato;
+/*background-repeat: no-repeat;*/
+    -webkit-background-size: 100% 100%;             /**/
+    -moz-background-size: 100% 100%;                /**/
+    -o-background-size: 100% 100%;                  /**/
 }
 
 .thumbnail img{
@@ -62,8 +66,10 @@ text-shadow: 1px 1px 0 rgba(220,220,220,0.2);
   left: 50%;
   top: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);                   /**/
   transform: translate3d(-50%, -50%, 0);
   z-index: 1;
+
 }
 
 #jumbo{
