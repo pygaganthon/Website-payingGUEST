@@ -51,7 +51,18 @@
             
         </div>
     </nav>
-        
+     <div class="container">
+         <% if(success && success.length>0) { %>
+         <div class="alert alert-success" role="alert">
+             <%= success %>
+         </div>
+     <% } %>
+     <% if(error && error.length>0) { %>
+         <div class="alert alert-danger" role="alert">
+             <%= error %>
+         </div>
+          <% } %>
+    </div>
     
     <!--<li><a href="/">Sign In</a></li>-->
     <!--                <li><a href="/">Sign Up</a></li>-->

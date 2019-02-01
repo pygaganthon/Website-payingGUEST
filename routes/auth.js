@@ -25,26 +25,33 @@ router.post("/signup",function(req,res){
              username:req.body.username
      }),req.body.password,function(err,user){
         if(err){
-            console.log("ERROR");
-            res.render("signup");
+            
+            req.flash("error","Invalid Credentials! Please try again.");
+            return res.render("signup");
         }
 
         passport.authenticate("local")(req,res, function(){
+            
+                    req.flash("success","Welcome to payingGUEST "+user.firstname+" !");
             res.redirect("/payingguests");
         });
     });
 });
 
 router.get("/signin",function(req,res){
+    
     res.render("signin");
 });
 
 router.post("/signin",passport.authenticate( "local", { 
+    
         successRedirect:"/payingguests",failureRedirect:"/signin"
     }) ,function(req,res){
+      
 });
 
 router.get("/signout",function(req,res){
+    req.flash("success","Successfully SignedOut!");
     req.logout(); // passport is destroying user data in session, not keeping track of user data in session
     res.redirect("/");
 });
@@ -54,6 +61,7 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }
+    //req.flash("error","Please SignIn first!");
     res.redirect("/signin");
 }
 

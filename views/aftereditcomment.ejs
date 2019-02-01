@@ -13,51 +13,59 @@
                     <h4><%= homeinfo.name %> by <a href="">@<%= homeinfo.owner.firstname %></a></h4>
                     <p><%= homeinfo.description %> </p>
                     <!--<span >-->
-                    <div style="font-style:italic;">Created <%= moment(homeinfo.createdAt).fromNow() %></div>
+                    
                      <% if(curruser && JSON.stringify(homeinfo.owner.id) === JSON.stringify(curruser._id)){ %>
                     <a style="margin-left:639px;margin-right:10px;" href="/payingguests/<%=homeinfo._id%>/edit" class="btn btn-default btn-lg">Edit</a>
                     <form id = "formdelete" action="/payingguests/<%=homeinfo._id%>?_method=DELETE" method="POST">
                         <button style="color:#202020;" class = "btn btn-danger btn-lg">Delete</button>
                     </form>
                     <% } %> 
-                    
                    
                 </div>
             </div>
             <div class="well">
               <div>
                 
-                <form action="/payingguests/<%=homeinfo._id%>/comment" method="POST" class="form-inline">
+                <form action="/payingguests/<%=homeinfo._id%>/comment/<%=commentinfo._id%>?_method=PUT" method="POST" class="form-inline">
                        
                 <% if(curruser && JSON.stringify(homeinfo.owner.id) !== JSON.stringify(curruser._id)){ %>
                 
                     <div class="form-group">
-                        <textarea style="margin-right:28px;" class="form-control" rows="4" cols="90" type="text" name="text" placeholder="Write a review" required></textarea>
+                        
+                        <textarea style="margin-right:28px;" class="form-control" rows="2" cols="90" type="text" name="text" required><%= commentinfo.text %></textarea>
                         <!--<input class = "form-control" type="text" name="comment[text]" placeholder="Write a review">-->
                     </div>
-                    <button class="btn btn-default btn-mg" type="submit">Add review!</button>  
+                    <button class="btn btn-default btn-mg" type="submit">Update review!</button>  
                     
                  <% }    %>
                  
                 </form>
             </div>
             <hr>
+            
             <% homeinfo.comments.forEach(function(comment){ %>
+            
+            <% if(!comment._id.equals(commentinfo._id)) { %>
+            
             <div class="row">
                 <div class="col-md-12">
                      <strong><%= comment.author.firstname %></strong>
                      <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
-                     
                      <p>
-                        <%= comment.text %>    
-                     
-                            <% if(curruser  && comment.author.id.equals(curruser._id)){ %>
-                         <a class="pull-right" href="/payingguests/<%=homeinfo._id%>/comment/<%=comment._id%>/edit" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                            <% } %>
+                        <%= comment.text %>  
+                        
+                                <% if(comment.author.id.equals(curruser._id)){ %>
+                                <a class="pull-right" href="/payingguests/<%=homeinfo._id%>/comment/<%=comment._id%>/edit" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <% } %>
+                        
                      </p>
+                    <!-- <button type="button" class="btn btn-default btn-lg">-->
+                        
+                    <!--</button>-->
+                         
                 </div>
             </div>
-               
+               <% } %>
                 
             <% }); %>
             <!--style="width: 30%; margin:20px;"-->

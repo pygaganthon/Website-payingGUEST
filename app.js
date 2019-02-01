@@ -9,7 +9,9 @@ var express     = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
-    methodOverride = require("method-override");
+    methodOverride = require("method-override"),
+    flash = require("connect-flash"),
+    moment = require("moment");
 var authroutes = require("./routes/auth");    
 var commentroutes = require("./routes/comment");    
 var pguestsroutes = require("./routes/pguests");    
@@ -36,6 +38,8 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
+app.use(flash());
+app.locals.moment = require('moment');
 
 passport.use(new LocalStrategy(users.authenticate())); 
 passport.serializeUser(users.serializeUser());  
@@ -43,8 +47,11 @@ passport.deserializeUser(users.deserializeUser());
 
 app.use(function(req,res,next){
     res.locals.curruser=req.user;
+    res.locals.error=req.flash("error");
+    res.locals.success=req.flash("success");
     next();
 });
+
     // Homes.create({
     //     name: "Madone house", 
     //     image:"https://i.ibb.co/znC4CFT/neonbrand-263851-unsplash.jpg",

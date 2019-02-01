@@ -7,7 +7,8 @@ var commentsSchema = new mongoose.Schema({
         ref:"users"
        },
         firstname:String
-    }
+    },
+    createdAt: { type: Date, default: Date.now }
     
     
     

@@ -72,6 +72,11 @@ text-shadow: 1px 1px 0 rgba(220,220,220,0.2);
 
 }
 
+#formdelete{
+ display:inline;
+ 
+}
+
 #jumbo{
   position: relative;
   color: #f8f8f8;
