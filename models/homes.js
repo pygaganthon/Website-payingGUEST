@@ -5,6 +5,7 @@ var homesSchema = new mongoose.Schema({
     image: String,
     description:String,
     price:String,
+    contact:Number,
     owner:{
        id:{ type: mongoose.Schema.Types.ObjectId,
         ref:"users"

@@ -10,7 +10,7 @@
                 <div class="caption-full" style="padding:19px">
                     <h4 class="pull-right">Price: <%= homeinfo.price %>/month</h4>
                     
-                    <h4><%= homeinfo.name %> by <a href="">@<%= homeinfo.owner.firstname %></a></h4>
+                    <h4><%= homeinfo.name %> by <a href="">@<%= homeinfo.owner.firstname %>  </a>  <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"> </span> <%= homeinfo.contact %></h4>
                     <p><%= homeinfo.description %> </p>
                     <!--<span >-->
                     <div style="font-style:italic;">Created <%= moment(homeinfo.createdAt).fromNow() %></div>

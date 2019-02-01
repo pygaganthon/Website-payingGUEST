@@ -49,6 +49,7 @@ router.post("/payingguests",isLoggedIn,upload.single('homeimage'),function(req,r
             var name = req.body.homename;
             var price = req.body.homeprice;
             var image = result.secure_url;
+            var contact = req.body.homecontact;
             var description = req.body.descriptionform;
             var owner={
                 id:req.user._id,
@@ -58,6 +59,7 @@ router.post("/payingguests",isLoggedIn,upload.single('homeimage'),function(req,r
                   name:name,  
                   image:image,
                   price:price,
+                  contact:contact,
                   description:description,
                   owner:owner
                 }
@@ -145,6 +147,7 @@ router.put("/payingguests/:id",ownership,upload.single('homeimage'),function(req
             var data = {
                 name:req.body.homename,
                 price:req.body.homeprice,
+                contact:req.body.homecontact,
                 image:result.secure_url,
                 description:req.body.descriptionform
             }
